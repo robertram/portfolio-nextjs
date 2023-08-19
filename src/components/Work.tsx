@@ -12,8 +12,8 @@ const Work = (props: Props) => {
 
   const sortByDate = (data: any) => {
     data.sort((a: any, b: any) => {
-      const date1: any = new Date(b.realDate);
-      const date2: any = new Date(a.realDate);
+      const date1: any = new Date(b.date);
+      const date2: any = new Date(a.date);
       return date1 - date2;
     });
     setWorkArray(data);

@@ -64,9 +64,9 @@ export const WorkExperienceCard = (props:ICard) => {
             </a>
           </h3>
 
-          {startDate && endDate && (
+          {startDate && (
             <p className="dark:text-text-dark text-text-light text-md font-semibold">
-              {moment(startDate ? startDate : '').format("MMMM, YYYY")} - {moment(endDate ? endDate : '').format("MMMM, YYYY")}
+              {moment(startDate ? startDate : '').format("MMMM, YYYY")} - {endDate?moment(endDate ? endDate : '').format("MMMM, YYYY"):'Current'}
             </p>
           )}
           {description && (

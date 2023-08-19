@@ -16,8 +16,8 @@ const WorkExperience = (props: Props) => {
 
   const sortByDate = (data: any) => {
     const sorted = data.sort((a: any, b: any) => {
-      const date1: any = new Date(b.raw_date);
-      const date2: any = new Date(a.raw_date);
+      const date1: any = new Date(b.date);
+      const date2: any = new Date(a.date);
       return date1 - date2;
     });
 
