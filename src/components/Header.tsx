@@ -46,9 +46,9 @@ const Header = () => {
         }
       >
         <div className="Header__logoLinkContainer my-auto">
-          <a href="/" title="Home" className="Header__logoLink">
+          <Link href="/" title="Home" className="Header__logoLink">
             <Logo />
-          </a>
+          </Link>
         </div>
 
         <div className="Header__menu dark:bg-background2-dark bg-background2-light transition-all duration-300">

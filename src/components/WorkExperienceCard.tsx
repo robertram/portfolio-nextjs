@@ -29,14 +29,12 @@ export const WorkExperienceCard = (props: ICard) => {
     title,
     description,
     picture,
-    date,
     startDate,
     endDate,
     link,
     company,
     company_link,
     teches,
-    provider,
   } = props.cardData;
 
   return (
@@ -103,7 +101,6 @@ export const WorkExperienceCard = (props: ICard) => {
                         height={10}
                         className="mr-2 mt-2 "
                       />
-                      {props.children}
                     </li>
                   ),
                 }}

@@ -38,7 +38,7 @@ const WorkExperience = (props: Props) => {
           <div className="flex flex-col md:flex-row border-red border-2 max-w-4xl m-auto">
             <div className="flex flex-row md:flex-col md:mb-0 mb-5 md:overflow-hidden overflow-x-scroll md:border-0 border-b-2 border-solid border-lightBlue">
               {workArray &&
-                workArray.map((item: any) => {
+                workArray.map((item: any, index: number) => {
                   return (
                     <div
                       className={`company cursor-pointer hover:text-linkHover md:mb-2 text-xl mr-4 md:mr-0 whitespace-nowrap md:p-0 p-4 ${
@@ -49,6 +49,7 @@ const WorkExperience = (props: Props) => {
                       onClick={() => {
                         setActiveCompany(item);
                       }}
+                      key={index}
                     >
                       {item.company}
                     </div>

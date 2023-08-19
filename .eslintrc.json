@@ -1,5 +1,5 @@
 {
-  "extends": "next/core-web-vitals", 
+  "extends": "next/core-web-vitals",
   "rules": {
     "space-before-function-paren": "off",
     "spaced-comment": "off",
@@ -35,6 +35,8 @@
     "react/jsx-indent-props": "off",
     "n/handle-callback-err": "off",
     "eqeqeq": "off",
-    "no-empty": "off"
+    "no-empty": "off",
+    "react/no-unescaped-entities": "off",
+    "react/no-children-prop": "off"
   }
 }
