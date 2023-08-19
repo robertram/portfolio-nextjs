@@ -24,7 +24,8 @@ interface CardProps {
   provider?: string;
 }
 
-export const WorkExperienceCard = (props: ICard) => {
+export const WorkExperienceCard = (props:ICard) => {
+  if (!props?.cardData) return null
   const {
     title,
     description,
@@ -35,7 +36,7 @@ export const WorkExperienceCard = (props: ICard) => {
     company,
     company_link,
     teches,
-  } = props.cardData;
+  } = props?.cardData;
 
   return (
     <WorkExperienceCardContainer className="max-w-xl h-full mb-4 rounded-xl shadow-md bg-background2-light dark:bg-background2-dark hover:shadow-2xl transition-all duration-500">
@@ -91,7 +92,7 @@ export const WorkExperienceCard = (props: ICard) => {
                       className="dark:text-orange text-background2"
                     ></strong>
                   ),
-                  li: ({ node, ...props }) => (
+                  li: ({ node, ...props }: any) => (
                     <li
                       {...props}
                       className="flex dark:text-text-dark text-text-light "
@@ -101,6 +102,7 @@ export const WorkExperienceCard = (props: ICard) => {
                         height={10}
                         className="mr-2 mt-2 "
                       />
+                      {node.children[0]?.value}
                     </li>
                   ),
                 }}
