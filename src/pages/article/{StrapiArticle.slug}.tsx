@@ -7,6 +7,7 @@ import styled from "styled-components";
 import Image from 'next/image'
 
 const Article = ({ data }: any) => {
+  return null
   const article = data.strapiArticle;
   //const writter = data.strapiWriter;
   const seo = {
