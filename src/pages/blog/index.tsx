@@ -5,9 +5,10 @@ import { ThemeProvider } from "../../context/themeContext";
 import Articles from "../../components/Articles";
 
 const BlogPage = ({ data }: any) => {
+  return null
   return (
     <ThemeProvider>
-      <Layout pageTitle="My Blog Posts" seo={data.strapiHomepage.seo}>
+      <Layout pageTitle="My Blog Posts">
         <BlogPageContainer>
           <div className="BlogPage__wrapper pr-10 pl-10 max-w-screen-2xl m-auto pt-16">
             {/*<Nav />*/}
