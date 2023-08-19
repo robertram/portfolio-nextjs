@@ -21,7 +21,7 @@ const Work = (props: Props) => {
 
   useEffect(() => {
     sortByDate(workData);
-  }, []);
+  }, [workData]);
 
   return (
     <WorkContainer id="work" style={{ scrollMarginTop: "60px" }}>
@@ -34,18 +34,19 @@ const Work = (props: Props) => {
                 const {
                   title,
                   description,
-                  picture,
+                  image,
                   date,
                   link,
                   company,
                   teches,
                 } = item;
+
                 return (
                   <div key={index}>
                     <WorkCard
                       title={title}
                       description={description}
-                      picture={picture}
+                      image={image?.fields?.file?.url}
                       date={date}
                       link={link}
                       company={company}

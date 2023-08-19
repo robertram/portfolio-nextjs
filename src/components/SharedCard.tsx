@@ -1,11 +1,13 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 import styled from "styled-components";
 import Button from "./Button";
+import Image from 'next/image'
+import moment from "moment";
 
 interface CardProps {
   title: string;
   description?: string;
-  picture?: any;
+  image?: any;
   date?: string;
   link?: string;
   company?: string;
@@ -14,17 +16,21 @@ interface CardProps {
 }
 
 export const SharedCard = (props: CardProps) => {
-  const { title, description, picture, date, link, company, teches, provider } =
+  const { title, description, image, date, link, company, teches, provider } =
     props;
+
+  const formattedDate = moment(date ? date : '').format("MMMM, YYYY")
   return (
     <SharedCardContainer className="h-full mb-4 bg-background2-light dark:bg-background2-dark rounded-xl shadow-md hover:shadow-2xl transition-all duration-500">
       <div className="flex flex-col">
-        {picture && (
+        {image && (
           <div className="SharedCard__imageContainer sm:mr-6 mb-4 rounded-xl rounded-tl-xl rounded-tr-xl">
-            <img
-              src={picture.img[0].url}
+            <Image
+              src={`https:${image}`}
               alt={title}
               className="SharedCard__image w-full object-cover object-center rounded-tl-xl rounded-tr-xl "
+              width={500}
+              height={500}
             />
           </div>
         )}
@@ -47,9 +53,9 @@ export const SharedCard = (props: CardProps) => {
               {provider}
             </p>
           )}
-          {date && (
+          {formattedDate && (
             <p className="dark:text-text-dark text-text-light text-md font-semibold">
-              {date}
+              {formattedDate}
             </p>
           )}
           <div className="flex mt-2 flex-wrap">

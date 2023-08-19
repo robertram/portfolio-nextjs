@@ -1,10 +1,10 @@
 import React from "react";
-import { graphql } from "gatsby";
 import Moment from "react-moment";
 import Layout from "../../components/Layout";
 import Markdown from "react-markdown";
 import { ThemeProvider } from "../../context/themeContext";
 import styled from "styled-components";
+import Image from 'next/image'
 
 const Article = ({ data }: any) => {
   const article = data.strapiArticle;
@@ -22,10 +22,12 @@ const Article = ({ data }: any) => {
         <ArticleContainer className="Article h-full pt-16">
           <div className="Article__wrapper max-w-5xl pr-10 pl-10 m-auto dark:text-text-dark text-text-light">
             {article.picture && (
-              <img
+              <Image
                 src={article.picture.img[0].formats.large.url}
                 alt={`Picture for ${article.title} article`}
                 className="Article__image w-full"
+                width={500}
+                height={500}
               />
             )}
             <div className="Article__content mt-5 pb-5">

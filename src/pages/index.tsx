@@ -16,7 +16,6 @@ const IndexPage = () => {
   const [education, setEducation] = useState<any>([]);
   const [homepage, setHomepage] = useState<any>([]);
   const { getEntries } = useContentful();
-  //, getEducation, getWorkExperience, getHomepage
 
   useEffect(() => {
     getEntries('work').then((response) => response && setWork(response));
@@ -25,19 +24,11 @@ const IndexPage = () => {
     getEntries('homepage').then((response) => response && setHomepage(response));
   }, []);
 
-  console.log('work', work);
-  console.log('workExperience', workExperience);
-  console.log('education', education);
-
-  // //const work = data.allStrapiExperience.nodes;
-  // const education = data.allStrapiEducation.nodes;
-  // const workExperience = data.allStrapiWorkExperience.nodes;
-
   return (
     <ThemeProvider>
       <Layout pageTitle="Home Page">
         <HomeContainer>
-          <div className="Home__wrapper pr-10 pl-10 max-w-screen-2xl m-auto pt-16">
+          <div className="Home__wrapper pr-10 pl-10 max-w-screen-2xl m-auto pt-16 ">
             <Hero homepage={homepage} />
 
             <WorkExperience workData={workExperience} />

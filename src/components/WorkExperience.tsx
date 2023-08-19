@@ -8,9 +8,6 @@ interface Props {
 
 const WorkExperience = (props: Props) => {
   const { workData } = props;
-
-
-  console.log('workData', workData);
   
   const [workArray, setWorkArray] = useState<any>([]);
   const [activeCompany, setActiveCompany] = useState(
@@ -30,7 +27,7 @@ const WorkExperience = (props: Props) => {
   useEffect(() => {
     sortByDate(workData);
     setActiveCompany(workData[0]);
-  }, []);
+  }, [workData]);
 
   return (
     <WorkContainer id="work" style={{ scrollMarginTop: "60px" }}>

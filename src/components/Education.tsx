@@ -21,7 +21,8 @@ const Education = (props: Props) => {
 
   useEffect(() => {
     sortByDate(educationData);
-  }, []);
+  }, [educationData]);
+
   return (
     <EducationContainer id="education" style={{ scrollMarginTop: "60px" }}>
       <div className="EducationCard__parent m-auto py-8 pb-12 flex justify-center items-center">
@@ -30,14 +31,15 @@ const Education = (props: Props) => {
           <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6">
             {educationArray &&
               educationArray.map((item: any, index: number) => {
-                const { title, description, picture, date, provider, link } =
+                const { title, description, image, date, provider, link } =
                   item;
+                  
                 return (
                   <div key={index}>
                     <EducationCard
                       title={title}
                       description={description}
-                      picture={picture}
+                      image={image.fields.file.url}
                       date={date}
                       link={link}
                       provider={provider}

@@ -3,6 +3,7 @@ import styled from "styled-components";
 import Button from "./Button";
 import Markdown from "react-markdown";
 import RightArrow from "../images/RightArrow";
+import Image from 'next/image'
 
 interface ICard {
   cardData: CardProps;
@@ -37,10 +38,12 @@ export const WorkExperienceCard = (props: ICard) => {
       <div className="flex flex-col">
         {picture && (
           <div className="WorkExperienceCard__imageContainer sm:mr-6 mb-4 rounded-xl rounded-tl-xl rounded-tr-xl">
-            <img
+            <Image
               src={picture.img[0].url}
               alt={title}
               className="WorkExperienceCard__image w-full object-cover object-center rounded-tl-xl rounded-tr-xl "
+              width={500}
+              height={500}
             />
           </div>
         )}

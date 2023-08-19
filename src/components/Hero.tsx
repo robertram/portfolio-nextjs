@@ -1,12 +1,15 @@
 import * as React from "react";
 import styled from "styled-components";
+import Image from 'next/image'
 
 interface Props {
   homepage: any
 }
 
 const Hero = (props: Props) => {
-  const { title, description, image } = props.homepage[0]
+
+  if (!props?.homepage[0]) return null
+  const { title, description, image } = props?.homepage[0] ?? props?.homepage[0]
 
   return (
     <HeroContainer>
@@ -18,7 +21,6 @@ const Hero = (props: Props) => {
             </h1>
             <h2 className="mb-6 sm:mb-6 dark:text-text-dark text-text-light text-7xl sm:text-6xl ">
               {title}
-              Robert
             </h2>
             <p className="dark:text-text-dark text-text-light text-4xl sm:text-4xl">
               {description}
@@ -32,7 +34,13 @@ const Hero = (props: Props) => {
             </a>
           </div>
           <div className="w-full xl:w-1/2">
-            <img src={image.fields.file.url} alt={title} className="Hero__image w-full" />
+            <Image
+              src={`https:${image.fields.file.url}`}
+              alt={title}
+              className="Hero__image w-full"
+              width={500}
+              height={500}
+            />
           </div>
         </div>
       </div>

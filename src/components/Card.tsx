@@ -1,20 +1,23 @@
 import React from "react";
-import { Link } from "gatsby";
 import styled from "styled-components";
+import Link from 'next/link'
+import Image from 'next/image'
 
 const Card = ({ article }: any) => {
   return (
     <CardContainer className="h-full mb-6">
       <Link
-        to={`/article/${article.node.slug}`}
+        href={`/article/${article.node.slug}`}
         className="Card__link no-underline group"
         rel="noreferrer noopener"
       >
         <div className="Card__imageContainer mb-3 md:mb-5">
-          <img
+          <Image
             src={article.node.picture.img[0].formats.medium.url}
             alt={`${article.node.title} image`}
             className="Card__image md:w-96 md:h-52 object-cover"
+            width={500}
+            height={500}
           />
         </div>
         <div>
