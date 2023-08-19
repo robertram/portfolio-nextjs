@@ -15,6 +15,7 @@ const IndexPage = () => {
   const [workExperience, setWorkExperience] = useState<any>([]);
   const [education, setEducation] = useState<any>([]);
   const [homepage, setHomepage] = useState<any>([]);
+  const [SEOData, setSEOData] = useState<any>([]);
   const { getEntries } = useContentful();
 
   useEffect(() => {
@@ -22,11 +23,12 @@ const IndexPage = () => {
     getEntries('workExperience').then((response) => response && setWorkExperience(response));
     getEntries('education').then((response) => response && setEducation(response));
     getEntries('homepage').then((response) => response && setHomepage(response));
+    getEntries('seoData').then((response) => response && setSEOData(response));
   }, []);
 
   return (
     <ThemeProvider>
-      <Layout pageTitle="Home Page">
+      <Layout seo={SEOData[0]}>
         <HomeContainer>
           <div className="Home__wrapper pr-10 pl-10 max-w-screen-2xl m-auto pt-16 ">
             <Hero homepage={homepage} />

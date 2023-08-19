@@ -11,12 +11,12 @@ interface CardProps {
   date?: string;
   link?: string;
   company?: string;
-  teches?: any;
+  tech?: any;
   provider?: string;
 }
 
 export const SharedCard = (props: CardProps) => {
-  const { title, description, image, date, link, company, teches, provider } =
+  const { title, description, image, date, link, company, tech, provider } =
     props;
 
   const formattedDate = moment(date ? date : '').format("MMMM, YYYY")
@@ -59,13 +59,13 @@ export const SharedCard = (props: CardProps) => {
             </p>
           )}
           <div className="flex mt-2 flex-wrap">
-            {teches &&
-              teches.map((item: any, index: number) => (
+            {tech &&
+              tech.map((item: any, index: number) => (
                 <p
                   key={index}
                   className="text-sm dark:text-gray-300 bg-background-light dark:bg-background-dark w-min h-full px-2 py-1 mr-2 mb-2 rounded-lg whitespace-nowrap"
                 >
-                  {item.name}
+                  {item}
                 </p>
               ))}
           </div>

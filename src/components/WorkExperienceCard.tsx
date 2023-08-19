@@ -4,6 +4,7 @@ import Button from "./Button";
 import Markdown from "react-markdown";
 import RightArrow from "../images/RightArrow";
 import Image from 'next/image'
+import moment from "moment";
 
 interface ICard {
   cardData: CardProps;
@@ -14,6 +15,8 @@ interface CardProps {
   description?: string;
   picture?: any;
   date?: string;
+  startDate?: any
+  endDate?: any
   link?: string;
   company?: string;
   company_link?: string;
@@ -27,12 +30,15 @@ export const WorkExperienceCard = (props: ICard) => {
     description,
     picture,
     date,
+    startDate,
+    endDate,
     link,
     company,
     company_link,
     teches,
     provider,
   } = props.cardData;
+
   return (
     <WorkExperienceCardContainer className="max-w-xl h-full mb-4 rounded-xl shadow-md bg-background2-light dark:bg-background2-dark hover:shadow-2xl transition-all duration-500">
       <div className="flex flex-col">
@@ -52,16 +58,16 @@ export const WorkExperienceCard = (props: ICard) => {
             {title} @{" "}
             <a
               href={company_link}
-              className="cursor-pointer hover:underline hover:text-linkHover"
+              className="cursor-pointer underline hover:underline hover:text-linkHover"
               target="_blank"
             >
               {company}
             </a>
           </h3>
 
-          {date && (
+          {startDate && endDate && (
             <p className="dark:text-text-dark text-text-light text-md font-semibold">
-              {date}
+              {moment(startDate ? startDate : '').format("MMMM, YYYY")} - {moment(endDate ? endDate : '').format("MMMM, YYYY")}
             </p>
           )}
           {description && (

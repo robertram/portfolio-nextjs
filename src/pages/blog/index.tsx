@@ -1,7 +1,6 @@
 import * as React from "react";
 import Layout from "../../components/Layout";
 import styled from "styled-components";
-import { graphql } from "gatsby";
 import { ThemeProvider } from "../../context/themeContext";
 import Articles from "../../components/Articles";
 
@@ -27,44 +26,6 @@ const BlogPage = ({ data }: any) => {
 
 const BlogPageContainer = styled.div`
   .BlogPage {
-  }
-`;
-
-export const query = graphql`
-  query {
-    strapiHomepage {
-      hero {
-        title
-      }
-      seo {
-        metaTitle
-        metaDescription
-      }
-    }
-    # allStrapiArticle {
-    #   edges {
-    #     node {
-    #       strapiId
-    #       slug
-    #       title
-    #       category {
-    #         name
-    #       }
-    #       author {
-    #         name
-    #       }
-    #       picture {
-    #         img {
-    #           formats {
-    #             medium {
-    #               url
-    #             }
-    #           }
-    #         }
-    #       }
-    #     }
-    #   }
-    # }
   }
 `;
 

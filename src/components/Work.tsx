@@ -38,7 +38,7 @@ const Work = (props: Props) => {
                   date,
                   link,
                   company,
-                  teches,
+                  tech,
                 } = item;
 
                 return (
@@ -50,7 +50,7 @@ const Work = (props: Props) => {
                       date={date}
                       link={link}
                       company={company}
-                      teches={teches}
+                      tech={tech}
                     />
                   </div>
                 );
