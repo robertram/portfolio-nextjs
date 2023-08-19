@@ -5,6 +5,8 @@ import { ThemeProvider } from "../../context/themeContext";
 
 const BlogPost = ({ data }: any) => {
   //const image = getImage(data.mdx.frontmatter.hero_image);
+
+  return null
   return (
     <ThemeProvider>
       <Layout pageTitle="Super Cool Blog Posts">
