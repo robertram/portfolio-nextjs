@@ -16,8 +16,8 @@ const WorkExperience = (props: Props) => {
 
   const sortByDate = (data: any) => {
     const sorted = data.sort((a: any, b: any) => {
-      const date1: any = new Date(b.date);
-      const date2: any = new Date(a.date);
+      const date1: any = new Date(b.startDate);
+      const date2: any = new Date(a.startDate);
       return date1 - date2;
     });
 
@@ -25,6 +25,8 @@ const WorkExperience = (props: Props) => {
   };
 
   useEffect(() => {
+    console.log('workData', workData);
+    
     sortByDate(workData);
     setActiveCompany(workData[0]);
   }, [workData]);
